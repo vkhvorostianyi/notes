@@ -1,0 +1,17 @@
+import sys
+import pandas as pd
+import psycopg2
+
+"""
+----------------------------------------------------------------------------------------
+SHORT DESCRIPTION
+connection for postgres db with psycopg2 and saving as csv with pandas
+----------------------------------------------------------------------------------------
+"""
+
+
+def fetch_stat(start, finish):
+    con = psycopg2.connect("dbname=app user=app_user password=p@ss@!worD")
+    df = pd.read_sql('''SELECT * FROM table'''.format(start=str(start), finish=str(finish)), con)
+    with open('stat.csv', 'w') as file:
+        df.to_csv(file)
