@@ -1,0 +1,7 @@
+/usr/bin/env bash
+start=$1
+finish=$2
+echo you set period from $start to $finish
+echo processing ...
+docker-compose exec postgres  \
+psql -d app -U app_user -A -F"," -P footer=off -c "SELECT * FROM table"
