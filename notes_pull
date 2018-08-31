@@ -38,6 +38,9 @@ find DIR_NAME -type f | wc -l
 diff -r ~/fr_office_frames ~/fr_office_frames_10052018/ | wc -l
 docker-compose  exec app bash 
 du -sh directory ENTER
+dpkg-reconfigure tzdata - change timezone
+
 
 #postgres
  \c testdatabase
+ 
