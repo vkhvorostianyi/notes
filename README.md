@@ -4,10 +4,6 @@
 /usr/bin/env bash
 docker-compose exec postgres  \
 psql -d app -U app_user -A -F"," -P footer=off -c "SELECT * FROM table"
-________________________________________
-#### to get string from file
-$(cat session.txt | awk 'NR == 1') # to get string from file to cli linux/unix
-
 _________
 #### sql queries
 select * from crop where crop.updated between '2018-05-06' and '2018-05-08' and crop.user is '';
@@ -49,6 +45,7 @@ diff -r ~/fr_office_frames ~/fr_office_frames_10052018/ | wc -l #get duples list
 docker-compose  exec app bash  
 du -sh # disk usage statistic  
 dpkg-reconfigure tzdata  #change timezone  
+$(cat session.txt | awk 'NR == 1') # to get string from file to cli linux/unix
 ___
 #### postgres
  \c testdatabase
