@@ -1,0 +1,1 @@
+$(cat session.txt | awk 'NR == 1') # to get string from file
