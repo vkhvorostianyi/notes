@@ -60,19 +60,18 @@ from pyathenajdbc import connect
 import pandas as pd
 import os
 
-conn = connect(access_key=$access_key, #os.environ  
-                secret_key=$secret_ket, #os.environ  
-                s3_staging_dir='s3://path/to/s3',  
-                region_name = os.environ['region'],  
-                jvm_path='/Users/viacheslavkhvorostianyi/Downloads/AthenaJDBC42_2.0.5.jar') . 
+conn = connect(access_key=os.environ['access_key'],
+               secret_key=os.environ['secret_key'],
+               s3_staging_dir='s3://path/to/s3',  
+               region_name = os.environ['region'],  
+               jvm_path='/Users/viacheslavkhvorostianyi/Downloads/AthenaJDBC42_2.0.5.jar') . 
 
-df = pd.read_sql("""
-                    SELECT dt, case when service = 'default' then 'backend_default' else service end,  
+
+df = pd.read_sql("""SELECT dt, case when service = 'default' then 'backend_default' else service end,  
                     substring(json_extract_scalar(json, '$["@timestamp"]'), 1,16) as ts,  
                     count(1)as cnt,    
                     replace(substring(cast(from_unixtime(cast(json_extract_scalar(json, '$["some_key"]') as bigint)) as varchar),1,16),'    ','T') as consumed_at . 
                     FROM db  
                     WHERE dt = '2018-09-13 12'  
-                    group by 1,2,3,5
-                 """, conn)  
+                    group by 1,2,3,5 """, conn)  
 ```
