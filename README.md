@@ -40,7 +40,7 @@ docker run -d -v ~/fr_office_frames:/app/static/frames -v ~/fr_office_frames_100
 docker run -d -v ~/fr_office_frames_10052018:/app/static/frames/new_frames it --env DBPASS="p@ss@!worD" --env DBHOST="localhost:5432" --env DBUSER="app_user" --env DBNAME="app" -p 8010:8000 posgres_version
 docker-compose  exec app bash 
 docker-compose exec postgres  psql -U app_user app 
-__
+___
 #### Ubuntu
 which version
 lsb_release -a
@@ -49,6 +49,6 @@ diff -r ~/fr_office_frames ~/fr_office_frames_10052018/ | wc -l #get duples list
 docker-compose  exec app bash 
 du -sh # disk usage statistic
 dpkg-reconfigure tzdata  #change timezone
-__
+___
 #### postgres
  \c testdatabase
