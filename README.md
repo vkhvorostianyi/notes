@@ -66,7 +66,7 @@ conn = connect(access_key=$access_key, #os.environ
                 jvm_path='/Users/viacheslavkhvorostianyi/Downloads/AthenaJDBC42_2.0.5.jar') . 
 
 df = pd.read_sql("""
-...SELECT dt, case when service = 'default' then 'backend_default' else service end,  
+... SELECT dt, case when service = 'default' then 'backend_default' else service end,  
 substring(json_extract_scalar(json, '$["@timestamp"]'), 1,16) as ts,  
 count(1)as cnt,    
 replace(substring(cast(from_unixtime(cast(json_extract_scalar(json, '$["some_key"]') as bigint)) as varchar),1,16),'    ','T') as consumed_at . 
