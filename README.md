@@ -32,7 +32,7 @@ docker stop container
 docker save -o <path for generated tar file> <image name>
 docker load -i <path to image tar file>
 
-docker stop $(docker ps -a -q)
+docker stop $(docker ps -a -q) \n
 docker rm $(docker ps -a -q)
 docker rmi $(docker images -a -q)
 docker images -f 'dangling=true' -q
