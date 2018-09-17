@@ -6,6 +6,12 @@
 docker-compose exec postgres  \
 psql -d app -U app_user -A -F"," -P footer=off -c "SELECT * FROM table"
 ```
+```
+con = psycopg2.connect("dbname=app user=app_user password=p@ss@!worD")
+    df = pd.read_sql('''
+                SELECT 
+                DISTINCT user from table''')
+```
 _________
 #### sql queries
 select * from crop where crop.updated between '2018-05-06' and '2018-05-08' and crop.user is '';
