@@ -1,9 +1,11 @@
 # notes
 
 #### bash script for posgres db connection
+```bash
 /usr/bin/env bash
 docker-compose exec postgres  \
 psql -d app -U app_user -A -F"," -P footer=off -c "SELECT * FROM table"
+```
 _________
 #### sql queries
 select * from crop where crop.updated between '2018-05-06' and '2018-05-08' and crop.user is '';
