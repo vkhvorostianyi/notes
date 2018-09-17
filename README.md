@@ -6,7 +6,8 @@
 docker-compose exec postgres  \
 psql -d app -U app_user -A -F"," -P footer=off -c "SELECT * FROM table"
 ```
-```
+```python
+#python
 con = psycopg2.connect("dbname=app user=app_user password=p@ss@!worD")
     df = pd.read_sql('''
                 SELECT 
