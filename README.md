@@ -70,7 +70,7 @@ conn = connect(access_key=os.environ['access_key'],
                secret_key=os.environ['secret_key'],
                s3_staging_dir='s3://path/to/s3',  
                region_name = os.environ['region'],  
-               jvm_path='/Users/viacheslavkhvorostianyi/Downloads/AthenaJDBC42_2.0.5.jar') . 
+               jvm_path='/Users/viacheslavkhvorostianyi/Downloads/AthenaJDBC42_2.0.5.jar') 
 
 
 df = pd.read_sql("""SELECT dt, case when service = 'default' then 'backend_default' else service end,  
