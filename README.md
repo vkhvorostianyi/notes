@@ -13,6 +13,9 @@ con = psycopg2.connect("dbname=app user=app_user password=p@ss@!worD")
                 SELECT 
                 DISTINCT user from table''')
 ```
+```python
+virtualenv -p python3 envname
+```
 _________
 #### sql queries
 select * from crop where crop.updated between '2018-05-06' and '2018-05-08' and crop.user is '';
