@@ -1,5 +1,13 @@
 # notes
-
+#### bare repo 
+```bash
+cd repo
+mv .git ../repo.git # renaming just for clarity
+cd ..
+rm -fr repo
+cd repo.git
+git config --bool core.bare true
+```
 #### bash script for posgres db connection
 ```bash
 /usr/bin/env bash
