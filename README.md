@@ -8,7 +8,7 @@ python-pyrex python-pyside.qtopengl idle-python2.7 \
 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 \
 libqt4-xml libqt4-test libqt4-script libqt4-network \
 libqt4-dbus python-qt4 python-qt4-gl \
-libgle3 python-dev libssl-dev \
+libgle3 python-dev python3-dev libssl-dev \
 ```
 #### cli progress bar
 ```python
