@@ -142,6 +142,7 @@ docker-compose  exec app bash
 du -sh # disk usage statistic  
 dpkg-reconfigure tzdata  #change timezone  
 $(cat session.txt | awk 'NR == 1') # to get string from file to cli linux/unix
+sudo service postgresql stop
 ```
 ___
 #### postgres
