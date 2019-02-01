@@ -1,9 +1,10 @@
 # notes
 
 #### tar file save unpack
-tar -czvf name-of-archive.tar.gz /path/to/folder-or-file 
-tar -czvf files.tar.gz /usr/local/myfiles
-
+```bash
+tar -czvf name-of-archive.tar.gz /path/to/folder-or-file   
+tar -czvf files.tar.gz /usr/local/myfiles  
+```
 #### posgres config user fro web app
 ```bash
 sudo su postgres
