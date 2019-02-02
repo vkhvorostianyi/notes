@@ -86,7 +86,7 @@ git config --bool core.bare true
 ```bash
 /usr/bin/env bash
 docker-compose exec postgres  \
-psql -d app -U app_user -A -F"," -P footer=off -c "SELECT * FROM table"
+psql -d app -U app_user -A -F"," -P footer=off -c "SELECT * FROM table" > output.csv
 ```
 ```python
 #python
