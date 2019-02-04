@@ -1,5 +1,10 @@
 # notes
 
+#### to change tz settings
+```bash
+dpkg-reconfigure tzdata
+```
+
 #### tar file save unpack
 ```bash
 tar -czvf name-of-archive.tar.gz /path/to/folder-or-file   
