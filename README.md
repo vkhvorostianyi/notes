@@ -140,6 +140,7 @@ docker run -d -v ~/fr_office_frames:/app/static/frames -v ~/fr_office_frames_100
 docker run -d -v ~/fr_office_frames_10052018:/app/static/frames/new_frames it --env DBPASS="p@ss@!worD" --env   DBHOST="localhost:5432" --env DBUSER="app_user" --env DBNAME="app" -p 8010:8000 posgres_version  
 docker-compose  exec app bash   
 docker-compose exec postgres  psql -U app_user app
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name # get container ip
 ```
 ___
 #### Ubuntu
