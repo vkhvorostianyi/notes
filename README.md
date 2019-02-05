@@ -159,8 +159,7 @@ ___
 #### postgres
 ```sql
  \c testdatabase
- ALTER TABLE table_name
-RENAME TO new_table_name;
+ ALTER TABLE table_name RENAME TO new_table_name;
  ```
 ___
 #### AWS
