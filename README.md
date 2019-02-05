@@ -157,8 +157,10 @@ sudo service postgresql stop
 ```
 ___
 #### postgres
-```bash
+```sql
  \c testdatabase
+ ALTER TABLE table_name
+RENAME TO new_table_name;
  ```
 ___
 #### AWS
