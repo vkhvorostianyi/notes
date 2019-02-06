@@ -1,5 +1,20 @@
 # notes
 
+#### git commands
+```bash
+git add .
+git status
+git commit -m 'what was changed'
+git push
+git pull
+git checkout -b new_branch # create new branch and checkout to it 
+git reset 
+git reset --hard
+git reset --hard HEAD~1 rollback to one commit 
+git push --force 
+git diff
+```
+
 #### to change tz settings
 ```bash
 dpkg-reconfigure tzdata
