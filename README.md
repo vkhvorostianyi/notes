@@ -14,6 +14,7 @@ git reset --hard HEAD~1 rollback to one commit
 git push --force 
 git diff
 git branch
+git push --set-upstream origin house_web_app
 ```
 
 #### to change tz settings
