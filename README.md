@@ -13,6 +13,7 @@ git reset --hard
 git reset --hard HEAD~1 rollback to one commit 
 git push --force 
 git diff
+git branch
 ```
 
 #### to change tz settings
