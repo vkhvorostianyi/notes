@@ -15,6 +15,7 @@ git push --force
 git diff
 git branch
 git push --set-upstream origin house_web_app
+git merge hotfix
 ```
 
 #### to change tz settings
