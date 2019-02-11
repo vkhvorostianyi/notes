@@ -1,5 +1,29 @@
 # notes
 
+#### docker file sample
+
+```yml
+# Pyhon version
+FROM python:3.6
+
+# Working directory
+WORKDIR /app
+
+# Copy current directory contents onto the container
+COPY . /app
+# Installation of requirements
+RUN apt-get update && apt-get install -y default-jre nano
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Define environment var
+ENV NAME "docker"
+
+# Make 8000 port
+EXPOSE 80
+# CMD command for run
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "wsgi", "--access-logfile", "/app_volume/gncrn_log.log", "--log-level", "debug"]
+```
+
 #### git commands
 ```bash
 git add .
