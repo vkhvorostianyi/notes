@@ -1,5 +1,11 @@
 # notes
-
+#### numpy
+```python
+a = np.array([0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype=np.bool)
+# or
+b = ~a
+b = np.logical_not(a)
+```
 #### python FAQ
 ```bash
 export PYTHONPATH="${PYTHONPATH}:/my/other/path"
