@@ -1,4 +1,10 @@
 # notes
+
+#### python FAQ
+```bash
+export PYTHONPATH="${PYTHONPATH}:/my/other/path"
+```
+
 #### matplotlib
 ```python
 from matplotlib import pyplot as plt
