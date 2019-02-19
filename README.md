@@ -1,5 +1,18 @@
 # notes
+#### matplotlib
+```python
+from matplotlib import pyplot as plt
+import matplotlib
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 15}
 
+matplotlib.rc('font', **font)
+plt.figure(figsize=(20,20))
+plt.title('Packets per second')
+plt.xticks((0,1,10,50,10,250),size = 12)
+plt.hist(exp.packets_per_second, bins=[0,1,10,20,50], facecolor='g', edgecolor='black', alpha=0.75)
+```
 #### docker file sample
 
 ```yml
