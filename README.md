@@ -1,4 +1,9 @@
 # notes
+#### Athena sql
+```sql
+date_parse(dt, '%Y-%m-%d %H') as dt
+```
+
 #### numpy
 ```python
 a = np.array([0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype=np.bool)
