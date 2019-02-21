@@ -1,4 +1,5 @@
 # notes
+
 #### Athena sql
 ```sql
 date_parse(dt, '%Y-%m-%d %H') as dt
@@ -14,6 +15,46 @@ b = np.logical_not(a)
 #### python FAQ
 ```bash
 export PYTHONPATH="${PYTHONPATH}:/my/other/path"
+
+#multiprocessing
+
+import pandas as pd
+import numpy as np
+
+from multiprocessing import Pool
+from functools import partial
+
+def get_report(df):
+    res = []
+    c = 0
+    ids = df.device_id.unique()
+    for i in ids:
+        c += 1
+        if c%1000==0:
+            print(c)
+        res.append((i, rules(df[df.device_id == i])))
+    return np.array(res)
+
+
+def prepare_file(df):
+    index_first = int(df.index[0])
+    temp_results = get_report(df)
+    pd.DataFrame(temp_results).to_csv(
+        f'~/part_{index_first}.csv',
+        index=False)
+    print(f'part {index_first} was proceeded')
+
+
+
+all_df = pd.read_csv('~/Downloads/f.csv', dtype=str)
+
+n = 100000  # chunk row size
+list_df = [all_df[i:i+n] for i in range(0, all_df.shape[0], n)][6:13]
+
+with Pool(processes=4) as pool:
+    process_file = partial(prepare_file)
+    pool.map(process_file, list_df)
+
 ```
 
 #### matplotlib
