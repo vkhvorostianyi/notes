@@ -1,5 +1,8 @@
 # notes
-
+##### RedShift sql
+```
+select json_extract_path_text(json, 'key1', 'key2') from table 
+```
 #### Athena sql
 ```sql
 date_parse(dt, '%Y-%m-%d %H') as dt
