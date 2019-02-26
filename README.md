@@ -131,7 +131,7 @@ dpkg-reconfigure tzdata
 tar -czvf name-of-archive.tar.gz /path/to/folder-or-file   
 tar -czvf files.tar.gz /usr/local/myfiles  
 ```
-#### posgres config user fro web app
+#### posgres config user for web app
 ```bash
 sudo su postgres
 psql
