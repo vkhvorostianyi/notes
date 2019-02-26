@@ -1,6 +1,6 @@
 # notes
 #### RedShift sql
-```
+```sql
 select json_extract_path_text(json, 'key1', 'key2') from table 
 --
 select row_number() OVER(PARTITION BY device_id ORDER BY timestamp DESC) AS rn
