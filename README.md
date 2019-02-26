@@ -18,10 +18,12 @@ b = np.logical_not(a)
 #### python FAQ
 ```bash
 export PYTHONPATH="${PYTHONPATH}:/my/other/path"
-
+```
+```python
 # f-string float
 f'{a:.2}'
-
+```
+```python
 # multiprocessing
 
 import pandas as pd
