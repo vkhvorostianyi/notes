@@ -21,6 +21,8 @@ select date_parse(ts,'%Y-%m-%dT%H:%i:%s.%fZ') as ts,
        split_part(split_part(thread,'.',1),'[',1) as details
 --
 select date(date_parse(CAST(ts as varchar), '%Y-%m-%dT%H:%i:%s.%fZ')) as run_date from table
+--
+select json_extract_scalar(json, '$["@timestamp"]') AS timestamp from table
 ```
 
 #### numpy
