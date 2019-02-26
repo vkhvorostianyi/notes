@@ -9,7 +9,7 @@ select row_number() OVER(PARTITION BY device_id ORDER BY timestamp DESC) AS rn
 ```
 #### Athena sql
 ```sql
-date_parse(dt, '%Y-%m-%d %H') as dt
+select date_parse(dt, '%Y-%m-%d %H') as dt from table
 --
 select CAST(DATE_ADD('day', -5, DATE(NOW())) as varchar) as dt from table
 --
