@@ -2,10 +2,25 @@
 #### RedShift sql
 ```
 select json_extract_path_text(json, 'key1', 'key2') from table 
+--
+select row_number() OVER(PARTITION BY device_id ORDER BY timestamp DESC) AS rn
+--
+"timestamp" >= dateadd(day,-1,(SELECT min(date("timestamp")) FROM table)) AND "timestamp" <= (SELECT max("timestamp") FROM table
 ```
 #### Athena sql
 ```sql
 date_parse(dt, '%Y-%m-%d %H') as dt
+--
+select CAST(DATE_ADD('day', -5, DATE(NOW())) as varchar) as dt from table
+--
+select *,
+rank() OVER (PARTITION BY device_id ORDER BY timestamp DESC) AS rnk
+from table
+--
+select date_parse(ts,'%Y-%m-%dT%H:%i:%s.%fZ') as ts,
+       split_part(split_part(thread,'.',1),'[',1) as details
+--
+select date(date_parse(CAST(ts as varchar), '%Y-%m-%dT%H:%i:%s.%fZ')) as run_date from table
 ```
 
 #### numpy
