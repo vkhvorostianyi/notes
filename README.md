@@ -19,7 +19,10 @@ b = np.logical_not(a)
 ```bash
 export PYTHONPATH="${PYTHONPATH}:/my/other/path"
 
-#multiprocessing
+# f-string float
+f'{a:.2}'
+
+# multiprocessing
 
 import pandas as pd
 import numpy as np
