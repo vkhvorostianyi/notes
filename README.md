@@ -23,6 +23,20 @@ select date_parse(ts,'%Y-%m-%dT%H:%i:%s.%fZ') as ts,
 select date(date_parse(CAST(ts as varchar), '%Y-%m-%dT%H:%i:%s.%fZ')) as run_date from table
 --
 select json_extract_scalar(json, '$["@timestamp"]') AS timestamp from table
+--
+with tbl as (
+  select *,
+  rank() OVER (PARTITION BY device_id ORDER BY dt DESC) AS rnk
+  from table
+  where type = 'prod_type'
+  and dt > to_iso8601(current_date - interval '48' hour)
+  and id in (4,9) 
+)
+
+select * from tbl
+where tbl.rnk in (1,2,3,4,5,6,7,8,9,10)
+order by device_id
+--
 ```
 
 #### numpy
