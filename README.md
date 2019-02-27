@@ -35,7 +35,9 @@ with tbl as (
 
 select * from tbl
 where tbl.rnk in (1,2,3,4,5,6,7,8,9,10)
-order by device_id
+order by id
+--
+select CAST(regexp_extract(json_extract_scalar("json",'$.data.some_num'), '[-+]?\d*\.\d+|\d+') AS decimal) as num from table
 --
 ```
 
