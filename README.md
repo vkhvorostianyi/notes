@@ -39,6 +39,9 @@ order by id
 --
 select CAST(regexp_extract(json_extract_scalar("json",'$.data.some_num'), '[-+]?\d*\.\d+|\d+') AS decimal) as num from table
 --
+select
+      DATE_FORMAT(from_unixtime(cast(json_extract_scalar(logs.json, '$["context"]["eventOccurredTsMs"]') as bigint)/1000) , '%Y-%m-%d') as timestamp_date
+--
 ```
 
 #### numpy
