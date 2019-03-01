@@ -7,7 +7,7 @@ select row_number() OVER(PARTITION BY device_id ORDER BY timestamp DESC) AS rn
 --
 "timestamp" >= dateadd(day,-1,(SELECT min(date("timestamp")) FROM table)) AND "timestamp" <= (SELECT max("timestamp") FROM table
 --
-create view team_ringlabs.weekly_sr as select * from bi_raw_prod.status_reports_scrubbed where timestamp > DATE_ADD('day', -7, DATE(NOW())) with no schema binding
+create view weekly_tbl as select * from table where timestamp > DATE_ADD('day', -7, DATE(NOW())) with no schema binding
 ```
 #### Athena sql
 ```sql
