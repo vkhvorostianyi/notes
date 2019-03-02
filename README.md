@@ -1,4 +1,10 @@
 # notes
+#### Octave/Matlab
+```matlab
+g = (1 ./ (1 .+ e.^(-z))) % elementwise operations
+func = @(x) (1 ./ (1 .+ e.^(-x))); g = func(z);
+```
+
 #### RedShift sql
 ```sql
 select json_extract_path_text(json, 'key1', 'key2') from table 
