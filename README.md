@@ -59,6 +59,10 @@ a = np.array([0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype=np.bool)
 b = ~a
 b = np.logical_not(a)
 ```
+#### pandas 
+```python
+df = pd.DataFrame(np.random.randint(0,2,size=(100, 3)), columns=list('ABC'))
+```
 #### python FAQ
 ```bash
 export PYTHONPATH="${PYTHONPATH}:/my/other/path"
