@@ -64,6 +64,10 @@ b = np.logical_not(a)
 df = pd.DataFrame(np.random.randint(0,2,size=(100, 3)), columns=list('ABC'))
 ```
 #### python FAQ
+```python
+files = filter(os.path.isfile, os.listdir( os.curdir ) )  # files only
+```
+
 ```bash
 export PYTHONPATH="${PYTHONPATH}:/my/other/path"
 ```
