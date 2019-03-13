@@ -14,6 +14,8 @@ select row_number() OVER(PARTITION BY device_id ORDER BY timestamp DESC) AS rn
 select id from table where "timestamp" >= dateadd(day,-1,(SELECT min(date("timestamp")) FROM table)) AND "timestamp" <= (SELECT max("timestamp") FROM table
 --
 create or replace view schema.new_tbl as select * from tbl where "timestamp" >= dateadd(day,-7,(SELECT max(date("timestamp")) FROM  tbl))
+--
+select CURRENT_DATE - 7 -- last week
 ```
 #### Athena sql
 ```sql
