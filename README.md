@@ -31,6 +31,9 @@ FROM (SELECT device_id, mic_diag, RANK() OVER(PARTITION BY device_id ORDER BY cn
 WHERE rnk = 1
 )
 --
+select salesid, pricepaid::decimal(38,2)*100000000000000000000
+as value from sales where salesid<10 order by salesid;
+--
 ```
 #### Athena sql
 ```sql
