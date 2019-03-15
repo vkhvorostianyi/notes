@@ -22,6 +22,16 @@ case when regexp_substr(values, '[0-9\\.]+') in ('', NULL) then 0 else regexp_su
 as column_name
 from table
 --
+select name, item_bought
+from (select c.name, p.item_bought, count(*) as cnt,
+             row_number() over (order by count(*) desc) as seqnum
+      from customers c join
+           purchases p
+           using (customer_id)
+      group by c.name, p.item_bought
+     ) cp
+where seqnum = 1;
+--
 ```
 #### Athena sql
 ```sql
