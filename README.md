@@ -37,8 +37,8 @@ as value from sales where salesid<10 order by salesid;
 SELECT created_at, id, (lower(replace(mac_id,':','')) from table
 --
 select id where 
- (CASE WHEN 34.05 = round(loc.latitude ,4)  
-           AND -118.24 = round(loc.longitude,4)  
+ (CASE WHEN round(loc.latitude ,4) = 34.05
+           AND round(loc.longitude,4) = -118.24 
            THEN 0 
            ELSE ACOS(SIN(RADIANS(34.05)) * SIN(RADIANS(round(loc.latitude,4) )) + COS(RADIANS(34.05)) * COS(RADIANS(round(loc.latitude,4) )) * COS(RADIANS(round(loc.longitude,4)  - -118.24))) * 6371 
     END <= 25.0)
