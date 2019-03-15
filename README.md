@@ -40,7 +40,7 @@ select id where
  (CASE WHEN round(loc.latitude ,4) = 34.05
            AND round(loc.longitude,4) = -118.24 
            THEN 0 
-           ELSE ACOS(SIN(RADIANS(34.05)) * SIN(RADIANS(round(loc.latitude,4) )) + COS(RADIANS(34.05)) * COS(RADIANS(round(loc.latitude,4) )) * COS(RADIANS(round(loc.longitude,4)  - -118.24))) * 6371 
+           ELSE ACOS(SIN(RADIANS(34.05)) * SIN(RADIANS(round(loc.latitude,4) )) + COS(RADIANS(34.05)) * COS(RADIANS(round(loc.latitude,4) )) * COS(RADIANS(round(loc.longitude,4)  - (-118.24) ))) * 6371 
     END <= 25.0)
 ```
 #### Athena sql
