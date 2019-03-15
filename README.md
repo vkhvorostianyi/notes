@@ -22,15 +22,14 @@ case when regexp_substr(values, '[0-9\\.]+') in ('', NULL) then 0 else regexp_su
 as column_name
 from table
 --
-select name, item_bought
-from (select c.name, p.item_bought, count(*) as cnt,
-             row_number() over (order by count(*) desc) as seqnum
-      from customers c join
-           purchases p
-           using (customer_id)
-      group by c.name, p.item_bought
-     ) cp
-where seqnum = 1;
+mode_table as (
+SELECT device_id, mic_diag 
+FROM (SELECT device_id, mic_diag, RANK() OVER(PARTITION BY device_id ORDER BY cnt DESC) rnk
+     FROM (SELECT device_id, mic_diag, COUNT(*) AS cnt
+           FROM tbl c
+           GROUP BY 1,2) AS s1) AS s2
+WHERE rnk = 1
+)
 --
 ```
 #### Athena sql
