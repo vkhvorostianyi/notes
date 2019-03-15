@@ -16,6 +16,12 @@ select id from table where "timestamp" >= dateadd(day,-1,(SELECT min(date("times
 create or replace view schema.new_tbl as select * from tbl where "timestamp" >= dateadd(day,-7,(SELECT max(date("timestamp")) FROM  tbl))
 --
 select CURRENT_DATE - 7 -- last week
+--
+select id, type, 
+case when regexp_substr(values, '[0-9\\.]+') in ('', NULL) then 0 else regexp_substr(values, '[0-9\\.]+')::real end
+as column_name
+from table
+--
 ```
 #### Athena sql
 ```sql
