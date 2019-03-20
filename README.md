@@ -90,6 +90,8 @@ b = np.logical_not(a)
 #### pandas 
 ```python
 df = pd.DataFrame(np.random.randint(0,2,size=(100, 3)), columns=list('ABC'))
+s1 = pd.Series(['Mouse', 'dog', 'house and parrot', '23', np.NaN])
+s1.str.contains('og', regex=False)
 ```
 #### python FAQ
 ```python
