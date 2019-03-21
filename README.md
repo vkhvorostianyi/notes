@@ -385,5 +385,22 @@ df = pd.read_sql("""SELECT dt, case when service = 'default' then 'backend_defau
                     replace(substring(cast(from_unixtime(cast(json_extract_scalar(json, '$["some_key"]') as bigint)) as varchar),1,16),'    ','T') as consumed_at . 
                     FROM db  
                     WHERE dt = '2018-09-13 12'  
-                    group by 1,2,3,5 """, conn)  
+                    group by 1,2,3,5 """, conn)
+
+```
+
+#### Mask algo 
+```python
+def genarate_mask(dha_report)
+    states = np.ma.array(dha_report.columns[3:8])
+    res = []
+    state = []
+    for i in dha_report.iloc[:,3:8].values:
+        d = np.array([2 ** x  for x in range(len(i), 0,-1)])
+        state.append(states[i.astype(bool)].data)
+        res.append(sum(d*i))
+    dha_report['verbal'] = state
+    dha_report['state'] = res
+return dha report
+dha_report[(dha_report.state < 32) & (dha_report.state > 16) & (dha_report.type == 'doorbell_v4')].iloc[:,[0,1,8,9]]
 ```
