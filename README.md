@@ -42,6 +42,8 @@ select id where
            THEN 0 
            ELSE ACOS(SIN(RADIANS(34.05)) * SIN(RADIANS(round(loc.latitude,4) )) + COS(RADIANS(34.05)) * COS(RADIANS(round(loc.latitude,4) )) * COS(RADIANS(round(loc.longitude,4)  - (-118.24) ))) * 6371 
     END <= 25.0)
+--
+SUBSTRING ( MyColumn, 1 , 1 ) for the first character and SUBSTRING ( MyColumn, 1 , 2 ) for the first two.
 ```
 #### Athena sql
 ```sql
