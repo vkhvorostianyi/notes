@@ -388,6 +388,13 @@ df = pd.read_sql("""SELECT dt, case when service = 'default' then 'backend_defau
                     FROM db  
                     WHERE dt = '2018-09-13 12'  
                     group by 1,2,3,5 """, conn)
+                    
+from pyathena import connect
+import pandas as pd
+
+conn = connect(s3_staging_dir='s3://s3_dir')
+df = pd.read_sql("SELECT * FROM schema.table where dt > '2019-03-10 00' LIMIT 100", conn)
+print(df.head())
 
 ```
 
