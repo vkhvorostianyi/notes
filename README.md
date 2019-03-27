@@ -99,6 +99,10 @@ s1.str.contains('og', regex=False)
 ```python
 files = filter(os.path.isfile, os.listdir( os.curdir ) )  # files only
 ```
+```
+>>> print(", ".join(["ha" if i else "Ha" for i in range(3)]) + "!")
+Ha, ha, ha!
+```
 
 ```bash
 export PYTHONPATH="${PYTHONPATH}:/my/other/path"
