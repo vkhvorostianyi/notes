@@ -1,1 +1,1 @@
-some queries
+select * from table;
