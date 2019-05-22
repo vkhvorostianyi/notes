@@ -417,3 +417,20 @@ def genarate_mask(dha_report)
 return dha report
 dha_report[(dha_report.state < 32) & (dha_report.state > 16) & (dha_report.type == 'doorbell_v4')].iloc[:,[0,1,8,9]]
 ```
+
+#### RedShift connection
+```python
+def get_con_redshift():
+    import psycopg2
+    import configparser
+    import os
+    rs_cnfg = configparser.ConfigParser()
+    rs_cnfg.read(f'{os.path.expanduser("~")}/.redshift/config')
+    
+    con = psycopg2.connect(dbname=rs_cnfg["DEFAULT"]['dbname'],
+                       host=rs_cnfg["DEFAULT"]['host'], 
+                       port=rs_cnfg["DEFAULT"]['port'], 
+                       user=rs_cnfg["DEFAULT"]['user'], 
+                       password=rs_cnfg["DEFAULT"]['password'])
+    return con
+    ```
