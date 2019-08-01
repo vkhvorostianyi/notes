@@ -1,4 +1,12 @@
 # notes
+
+#### Python tips
+```
+except Exception as e:
+        logging.fatal(e, exc_info=True)  
+        log.append([k,len(iou_dict), e.__doc__])
+ ```
+ 
 #### Octave/Matlab
 ```matlab
 g = (1 ./ (1 .+ e.^(-z))) % elementwise operations
