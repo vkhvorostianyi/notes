@@ -6,6 +6,14 @@ except Exception as e:
         logging.fatal(e, exc_info=True)  
         log.append([k,len(iou_dict), e.__doc__])
  ```
+ ```
+ import io
+from contextlib import redirect_stdout
+
+with io.StringIO() as buf, redirect_stdout(buf):
+    print('redirected')
+    output = buf.getvalue()
+```
  
 #### Octave/Matlab
 ```matlab
