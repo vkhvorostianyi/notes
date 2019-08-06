@@ -1,18 +1,33 @@
 # notes
 
 #### Python tips
-```
+```python
 except Exception as e:
         logging.fatal(e, exc_info=True)  
         log.append([k,len(iou_dict), e.__doc__])
  ```
- ```
+ ```python
  import io
 from contextlib import redirect_stdout
 
 with io.StringIO() as buf, redirect_stdout(buf):
     print('redirected')
     output = buf.getvalue()
+```
+```python
+from boto3.session import Session
+import configparser
+
+ACCESS_KEY = cnfg['AWSResearch']['aws_access_key_id']
+SECRET_KEY = cnfg['AWSResearch']['aws_secret_access_key']
+
+session = Session(aws_access_key_id=ACCESS_KEY,
+                  aws_secret_access_key=SECRET_KEY)
+s3 = session.resource('s3')
+bucket = s3.Bucket('backet_name')
+prefix = 'path/to/dir/'
+
+bucket.objects.filter(Prefix=prefix)
 ```
  
 #### Octave/Matlab
