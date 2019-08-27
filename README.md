@@ -18,8 +18,8 @@ with io.StringIO() as buf, redirect_stdout(buf):
 from boto3.session import Session
 import configparser
 
-ACCESS_KEY = cnfg['AWSResearch']['aws_access_key_id']
-SECRET_KEY = cnfg['AWSResearch']['aws_secret_access_key']
+ACCESS_KEY = cnfg['AWSacc']['aws_access_key_id']
+SECRET_KEY = cnfg['AWSacc']['aws_secret_access_key']
 
 session = Session(aws_access_key_id=ACCESS_KEY,
                   aws_secret_access_key=SECRET_KEY)
