@@ -1,6 +1,11 @@
 # notes
 
 #### Python tips
+```bash
+jupyter notebook --no-browser --port=8889
+ssh -N -f -L localhost:8888:localhost:8889 username@your_remote_host_name
+```
+
 ```python 
 sum([[1],[2]], []) # => [1,2]
 ```
