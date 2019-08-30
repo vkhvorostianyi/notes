@@ -1,6 +1,10 @@
 # notes
 
 #### Python tips
+```python 
+sum([[1],[2]], []) # => [1,2]
+```
+
 ```python
 except Exception as e:
         logging.fatal(e, exc_info=True)  
