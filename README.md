@@ -1,10 +1,10 @@
 # notes
-
-#### Python tips
+##### bind the jupyter-notebook
 ```bash
 jupyter notebook --no-browser --port=8889
 ssh -N -f -L localhost:8888:localhost:8889 username@your_remote_host_name
 ```
+#### Python tips
 
 ```python 
 sum([[1],[2]], []) # => [1,2]
