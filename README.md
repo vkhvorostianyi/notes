@@ -143,6 +143,7 @@ files = filter(os.path.isfile, os.listdir( os.curdir ) )  # files only
 ```
 >>> print(", ".join(["ha" if i else "Ha" for i in range(3)]) + "!")
 Ha, ha, ha!
+merged.columns = [x.replace('_x','_montana') if x.endswith('_x') else x.replace('_y','_bravo') if x.endswith('_y') else x for x in merged.columns]
 ```
 
 ```bash
