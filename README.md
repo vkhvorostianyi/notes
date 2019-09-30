@@ -1,4 +1,8 @@
 # notes
+##### conda create env
+```bash
+conda create -n anti-aliased  python=3.6 -y
+```
 ##### bind the jupyter-notebook
 ```bash
 jupyter notebook --no-browser --port=8889
