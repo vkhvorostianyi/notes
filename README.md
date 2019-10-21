@@ -1,4 +1,10 @@
 # notes
+
+##### tensorboard
+```bash
+export TMPDIR=/tmp/$USER; mkdir -p $TMPDIR; tensorboard --logdir=. --port=1025
+```
+
 ##### conda create env
 ```bash
 conda create -n anti-aliased  python=3.6 -y
