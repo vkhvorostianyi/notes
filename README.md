@@ -4,6 +4,11 @@
 ```bash
 export TMPDIR=/tmp/$USER; mkdir -p $TMPDIR; tensorboard --logdir=. --port=1025
 ```
+##### ssh-commands
+```bash
+ssh-keygen -t rsa
+
+```
 
 ##### conda create env
 ```bash
