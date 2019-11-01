@@ -7,6 +7,9 @@ export TMPDIR=/tmp/$USER; mkdir -p $TMPDIR; tensorboard --logdir=. --port=1025
 ##### ssh-commands
 ```bash
 ssh-keygen -t rsa
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-add -k ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
 
 ```
 
