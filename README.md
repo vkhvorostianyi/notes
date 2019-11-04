@@ -1,4 +1,8 @@
 # notes
+#### cuda related 
+```bash
+sudo ldconfig /usr/local/cuda/lib64
+```
 
 ##### tensorboard
 ```bash
