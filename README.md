@@ -19,6 +19,7 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 ##### conda create env
 ```bash
+wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
 conda create -n anti-aliased  python=3.6 -y
 ```
 ##### bind the jupyter-notebook
