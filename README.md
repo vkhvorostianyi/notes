@@ -1,4 +1,8 @@
 # notes
+#### ssh 
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
 #### cuda related 
 ```bash
 sudo ldconfig /usr/local/cuda/lib64
