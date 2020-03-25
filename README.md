@@ -6,6 +6,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 #### cuda related 
 ```bash
 sudo ldconfig /usr/local/cuda/lib64
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:/usr/local/cuda-10.0/lib64
 ```
 
 ##### tensorboard
